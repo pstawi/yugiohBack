@@ -9,5 +9,6 @@ router.get('/allUtilisateurs', utilisateurController.getUtilisateurs);
 router.get('/infoUtilisateur', utilisateurController.getInfoUtilisateur);
 // définition de la route pour récupérer un utilisateur par son ID (requete avec paramètre)
 router.get('/utilisateurById/:id', utilisateurController.getUtilisateurById);
+router.post('/addUtilisateur', utilisateurController.addUtilisateur);
 
 export default router;

@@ -28,3 +28,13 @@ export const getUtilisateurById = async (id) => {
     // retour de la réponse
     return response;
 };
+
+export const addUtilisateur = async (nom, prenom, email, motDePasse, pseudo) => {
+    const insertUtilisateur = `
+    INSERT INTO utilisateur (nom, prenom, email, motDePasse, pseudo, dateInscription, roleId)
+    VALUES (?,?,?,?,?,now(),3);
+    `
+    const [result] = await connexion.query(insertUtilisateur,[nom, prenom, email, motDePasse, pseudo]);
+
+    return result;
+};
