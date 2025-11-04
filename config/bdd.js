@@ -5,9 +5,9 @@ import mysql from 'mysql2/promise';
 const connexion = mysql.createPool({
     //parametre de connexion
     host:"localhost",
-    user:"root",
-    password:"",
-    database:"yugioh",
+    user:"backup",
+    password:"root",
+    database:"yugiohmanager",
     port: 3306
 });
 

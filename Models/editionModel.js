@@ -1,9 +1,9 @@
 import connexion from "../config/bdd.js";
 
-export const addEdition = async (codeEdition, nom, dateSortie, fabriquant) => {
+export const addEdition = async (codeEdition, nomEdition, dateSortie, fabricant) => {
     const query = `
-    INSERT INTO edition (codeEdition, nom, dateSortie, fabriquant)
+    INSERT INTO edition (codeEdition, nomEdition, dateSortie, fabricant)
     VALUES (?, ?, ?, ?)`;
-    const [result] = await connexion.query(query, [codeEdition, nom, dateSortie, fabriquant]);
+    const [result] = await connexion.query(query, [codeEdition, nomEdition, dateSortie, fabricant]);
     return result;
 };

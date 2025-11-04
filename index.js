@@ -12,9 +12,12 @@ import editionRoutes from './Routes/editionRoute.js';
 import rareteRoutes from './Routes/rareteRoute.js';
 import typeRoutes from './Routes/typeRoute.js';
 
+import cors from 'cors';
+
 // création de l'application express
 const app = express();
-
+// middleware pour autoriser les requêtes cross-origin
+app.use(cors());
 // middleware pour utiliser le format JSON
 app.use(express.json());
 

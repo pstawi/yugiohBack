@@ -9,6 +9,10 @@ router.get('/allUtilisateurs', utilisateurController.getUtilisateurs);
 router.get('/infoUtilisateur', utilisateurController.getInfoUtilisateur);
 // définition de la route pour récupérer un utilisateur par son ID (requete avec paramètre)
 router.get('/utilisateurById/:id', utilisateurController.getUtilisateurById);
+// définition de la route pour ajouter un utilisateur
 router.post('/addUtilisateur', utilisateurController.addUtilisateur);
-
+// définition de la route pour mettre à jour un utilisateur
+router.put('/updateUtilisateur/:id', utilisateurController.updateUtilisateur);
+// définition de la route pour supprimer un utilisateur
+router.delete('/deleteUtilisateur/:id', utilisateurController.deleteUtilisateur);
 export default router;
