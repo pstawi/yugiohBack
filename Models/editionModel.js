@@ -7,3 +7,9 @@ export const addEdition = async (codeEdition, nomEdition, dateSortie, fabricant)
     const [result] = await connexion.query(query, [codeEdition, nomEdition, dateSortie, fabricant]);
     return result;
 };
+export const getEditions = async () => {
+    const query = `
+    SELECT * FROM edition`;
+    const [rows] = await connexion.query(query);
+    return rows;
+};

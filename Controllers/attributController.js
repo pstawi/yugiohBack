@@ -9,3 +9,11 @@ export const addAttribut = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de l'ajout de l'attribut", error });
     }
 };
+export const getAttributs = async (req, res) => {
+    try {
+        const attributs = await attributModel.getAttributs();
+        res.status(200).json(attributs);
+    } catch (error) {
+        res.status(500).json({ message: "Erreur lors de la récupération des attributs", error });
+    }
+};

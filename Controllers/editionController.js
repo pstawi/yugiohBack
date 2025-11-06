@@ -9,3 +9,11 @@ export const addEdition = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de l'ajout de l'édition", error });
     }
 };
+export const getEditions = async (req, res) => {
+    try {
+        const editions = await editionModel.getEditions();
+        res.status(200).json(editions);
+    } catch (error) {
+        res.status(500).json({ message: "Erreur lors de la récupération des éditions", error });
+    }
+};

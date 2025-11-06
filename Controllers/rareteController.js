@@ -9,3 +9,12 @@ export const addRarete = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de l'ajout de la rareté", error });
     }
 };
+
+export const getRaretes = async (req, res) => {
+    try {
+        const raretes = await rareteModel.getRaretes();
+        res.status(200).json(raretes);
+    } catch (error) {
+        res.status(500).json({ message: "Erreur lors de la récupération des raretés", error });
+    }
+};

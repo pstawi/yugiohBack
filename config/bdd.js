@@ -7,7 +7,7 @@ const connexion = mysql.createPool({
     host:"localhost",
     user:"backup",
     password:"root",
-    database:"yugiohmanager",
+    database:"yugiohmaster",
     port: 3306
 });
 

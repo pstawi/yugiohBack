@@ -7,3 +7,10 @@ export const addAttribut = async (attributName) => {
     const [result] = await connexion.query(query, [attributName]);
     return result;
 };
+
+export const getAttributs = async () => {
+    const query = `
+    SELECT * FROM attributcarte`;
+    const [rows] = await connexion.query(query);
+    return rows;
+};
