@@ -99,3 +99,19 @@ export const searchCartes = async ({ q, idType, idRarete, codeEdition, minATK, m
 
     return { total, page: Number(page), limit: Number(limit), data: rows };
 };
+
+export const deleteCarte = async (id) => {
+    const deleteSql = `
+    DELETE FROM carte WHERE idCarte = ?`;
+    const [result] = await connexion.query(deleteSql, [id]);
+    return result;
+};
+
+export const updateCarte = async (id, nom, description, idType, idAttribut, niveau, attaque, defense, idRarete, imageUrl, codeEdition) => {
+    const updateSql = `
+    UPDATE carte
+    SET nom = ?, description = ?, idType = ?, idAttribut = ?, niveau = ?, attaque = ?, defense = ?, idRarete = ?, imageUrl = ?, codeEdition = ?
+    WHERE idCarte = ?`;
+    const [result] = await connexion.query(updateSql, [nom, description, idType, idAttribut, niveau, attaque, defense, idRarete, imageUrl, codeEdition, id]);
+    return result;
+};
